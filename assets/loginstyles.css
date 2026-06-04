@@ -1,0 +1,107 @@
+/* Fond de la page */
+body {
+    background: linear-gradient(135deg, #2b2d42, #3a506b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+/* Conteneur de connexion */
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1); 
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    backdrop-filter: blur(10px); 
+}
+
+/* Titre de connexion */
+.login-container h2 {
+    color: #ffffff;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+/* Champs de formulaire */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #f0f0f0;
+    font-weight: bold;
+}
+
+.form-group input[type="email"],
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 1em;
+    background: rgba(255, 255, 255, 0.15); 
+    color: #ffffff;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.form-group input[type="email"]:focus,
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus {
+    outline: none;
+    border: 1px solid #5bc0be;
+    box-shadow: 0 0 8px rgba(91, 192, 190, 0.5);
+}
+
+/* Bouton de connexion */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #e07108, #5bc0be);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(135deg, #e07108, #3a506b);
+    transform: scale(1.05);
+}
+
+/* Lien d'inscription */
+.login-container p {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #f0f0f0;
+}
+
+.login-container p a {
+    color: #e07108;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.login-container p a:hover {
+    color: #ffffff;
+}
+
+.form-error {
+    color: #ffb3b3 !important;
+    font-weight: bold;
+}

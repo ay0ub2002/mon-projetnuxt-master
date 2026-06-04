@@ -1,0 +1,97 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Fond de la page */
+body {
+  background: linear-gradient(135deg, #2b2d42, #3a506b);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Conteneur principal de la landing page */
+.landing-page {
+  max-width: 800px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+/* Titre principal */
+.landing-page h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Sous-titre */
+.landing-page p {
+  font-size: 1.2em;
+  color: #f0f0f0;
+  margin-bottom: 30px;
+}
+
+/* Bouton pour commencer */
+.get-started-button {
+  background: linear-gradient(135deg, #e07108, #5bc0be);
+  color: #ffffff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1em;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.get-started-button:hover {
+  background: linear-gradient(135deg, #e07108, #3a506b);
+  transform: scale(1.05);
+}
+
+/* Section des fonctionnalités */
+.features {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 40px;
+}
+
+.feature {
+  flex: 1;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature h2 {
+  font-size: 1.5em;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  color: #dddddd;
+  font-size: 1em;
+}
+
+/* Style pour le logo */
+.logo {
+  width: 240px; /* Taille du logo */
+  margin-bottom: 20px;
+}
