@@ -222,9 +222,28 @@ h2 {
 .timestamp {
     font-size: 0.8em;
     color: #e07108;
+}
+
+.message-footer {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
     margin-top: 5px;
-    display: block;
-    text-align: right;
+}
+
+.delete-message-button {
+    background: transparent;
+    border: none;
+    color: #b9c5d4;
+    cursor: pointer;
+    font-size: 0.75em;
+    padding: 2px;
+}
+
+.delete-message-button:hover {
+    color: #ffffff;
+    text-decoration: underline;
 }
 
 /* Zone d'entrée de message */

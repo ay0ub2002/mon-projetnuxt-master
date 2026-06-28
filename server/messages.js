@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const router = express.Router();
 const Message = require('./messageModel');
 const User = require('./userModel');
@@ -87,6 +88,37 @@ router.post('/', async (req, res) => {
     return sendJson(res, 201, { message: 'Message enregistre', data: serializeMessage(newMessage) });
   } catch (error) {
     console.error('Erreur POST /api/messages:', error);
+    return sendJson(res, 500, { message: 'Erreur interne du serveur' });
+  }
+});
+
+router.delete('/:messageId', async (req, res) => {
+  try {
+    await connectDB();
+
+    const { messageId } = req.params;
+    const { senderId } = req.body || {};
+
+    if (!messageId || !senderId) {
+      return sendJson(res, 400, { message: 'messageId et senderId requis' });
+    }
+
+    if (!mongoose.isValidObjectId(messageId) || !mongoose.isValidObjectId(senderId)) {
+      return sendJson(res, 400, { message: 'Identifiant invalide' });
+    }
+
+    const deletedMessage = await Message.findOneAndDelete({
+      _id: messageId,
+      sender: senderId,
+    });
+
+    if (!deletedMessage) {
+      return sendJson(res, 404, { message: 'Message introuvable ou suppression interdite' });
+    }
+
+    return sendJson(res, 200, { message: 'Message supprime' });
+  } catch (error) {
+    console.error('Erreur DELETE /api/messages:', error);
     return sendJson(res, 500, { message: 'Erreur interne du serveur' });
   }
 });

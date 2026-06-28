@@ -46,7 +46,18 @@
             :class="['message', message.sender === currentUser.id ? 'sent' : 'received']"
           >
             <p>{{ message.content }}</p>
-            <span class="timestamp">{{ formatDate(message.createdAt) }}</span>
+            <div class="message-footer">
+              <button
+                v-if="message.sender === currentUser.id"
+                type="button"
+                class="delete-message-button"
+                title="Supprimer ce message"
+                @click="deleteMessage(message._id)"
+              >
+                Supprimer
+              </button>
+              <span class="timestamp">{{ formatDate(message.createdAt) }}</span>
+            </div>
           </div>
         </div>
 
@@ -206,6 +217,33 @@ export default {
       } catch (err) {
         console.error('Erreur reseau', err);
         this.errorMessage = 'Erreur reseau pendant l envoi du message.';
+      }
+    },
+
+    async deleteMessage(messageId) {
+      if (!window.confirm('Supprimer ce message ?')) {
+        return;
+      }
+
+      try {
+        this.errorMessage = '';
+        const response = await fetch(`/api/messages/${messageId}`, {
+          method: 'DELETE',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ senderId: this.currentUser.id }),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          this.errorMessage = data.message || 'Erreur lors de la suppression.';
+          return;
+        }
+
+        this.messages = this.messages.filter((message) => message._id !== messageId);
+      } catch (err) {
+        console.error('Erreur de suppression', err);
+        this.errorMessage = 'Erreur reseau pendant la suppression.';
       }
     },
 
