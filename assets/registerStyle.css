@@ -20,6 +20,7 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     text-align: center;
     backdrop-filter: blur(10px);
+    width: 100%;
   }
   
   /* Titre */
@@ -147,5 +148,22 @@ body {
   .form-error {
     color: #ffb3b3 !important;
     font-weight: bold;
+  }
+
+  @media (max-width: 480px) {
+    .register-container {
+      border-radius: 12px;
+      margin: 0 auto;
+      padding: 22px 18px;
+      width: calc(100vw - 32px);
+    }
+
+    .register-container h2 {
+      font-size: 1.5em;
+    }
+
+    .register-button:hover {
+      transform: none;
+    }
   }
   

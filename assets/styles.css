@@ -308,3 +308,161 @@ h2 {
     font-weight: bold;
     margin-top: 10px;
 }
+
+@media (max-width: 768px) {
+    .messages-container {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 8px;
+        height: 100vh;
+        height: 100dvh;
+        justify-content: flex-start;
+        overflow: hidden;
+        padding: 8px;
+    }
+
+    .sidebar {
+        border-radius: 12px;
+        flex-shrink: 0;
+        height: auto;
+        margin-right: 0;
+        max-height: 190px;
+        padding: 12px;
+        width: 100%;
+    }
+
+    .sidebar-header {
+        align-items: center;
+    }
+
+    .sidebar-header h2 {
+        font-size: 1.1em;
+        margin-bottom: 12px;
+    }
+
+    .current-user {
+        font-size: 0.85em;
+        margin-bottom: 10px;
+        margin-top: -8px;
+    }
+
+    .logout-button {
+        border-radius: 10px;
+        padding: 8px 10px;
+    }
+
+    .contact-list {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        scrollbar-width: thin;
+    }
+
+    .contact {
+        flex-shrink: 0;
+        margin-bottom: 0;
+        min-width: 165px;
+        padding: 8px;
+    }
+
+    .contact:hover {
+        transform: none;
+    }
+
+    .contact-img {
+        height: 38px;
+        margin-right: 9px;
+        width: 38px;
+    }
+
+    .contact-name,
+    .contact-meta {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .contact-meta {
+        font-size: 0.75em;
+    }
+
+    .chat-area {
+        border-radius: 12px;
+        flex: 1;
+        height: auto;
+        min-height: 0;
+        padding: 12px;
+        width: 100%;
+    }
+
+    .chat-header {
+        flex-shrink: 0;
+        margin-bottom: 10px;
+    }
+
+    .profile-img {
+        height: 42px;
+        margin-right: 10px;
+        width: 42px;
+    }
+
+    .chat-name {
+        font-size: 1.05em;
+    }
+
+    .chat-messages {
+        min-height: 0;
+        padding-right: 4px;
+    }
+
+    .message {
+        border-radius: 14px;
+        margin-bottom: 10px;
+        max-width: 85%;
+        overflow-wrap: anywhere;
+        padding: 10px;
+    }
+
+    .message-input-area {
+        flex-shrink: 0;
+        gap: 8px;
+        margin-top: 10px;
+    }
+
+    .message-input {
+        min-width: 0;
+        margin-right: 0;
+        padding: 12px;
+    }
+
+    .send-button {
+        border-radius: 12px;
+        flex-shrink: 0;
+        padding: 12px 14px;
+    }
+
+    .chat-error {
+        font-size: 0.85em;
+        margin-top: 6px;
+    }
+}
+
+@media (max-width: 420px) {
+    .contact {
+        min-width: 130px;
+    }
+
+    .contact-meta {
+        display: none;
+    }
+
+    .message {
+        max-width: 90%;
+    }
+
+    .send-button {
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+}
