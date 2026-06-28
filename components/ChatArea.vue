@@ -16,7 +16,7 @@
           :class="['contact', selectedContact && selectedContact.id === user.id ? 'active' : '']"
           @click="selectContact(user)"
         >
-          <img src="~/assets/resources/pdp.jpeg" :alt="user.username" class="contact-img">
+          <img src="~/assets/resources/pdp.jpg" :alt="user.username" class="contact-img">
           <div class="contact-info">
             <p class="contact-name">{{ user.username }}</p>
             <p class="contact-meta">Conversation privee</p>
@@ -32,7 +32,7 @@
     <div class="chat-area">
       <template v-if="selectedContact">
         <div class="chat-header">
-          <img src="~/assets/resources/pdp.jpeg" alt="Profil" class="profile-img">
+          <img src="~/assets/resources/pdp.jpg" alt="Profil" class="profile-img">
           <div class="chat-info">
             <p class="chat-name">{{ selectedContact.username }}</p>
             <p class="status">Discussion privee</p>
